@@ -288,6 +288,7 @@ img {
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px;
 }
 
 .modal-button {
@@ -302,6 +303,7 @@ img {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  transition: fill var(--transition-duration) var(--transition-timing-function);
 }
 .modal-button:hover {
   fill: var(--hover-color);
@@ -316,18 +318,14 @@ img {
   letter-spacing: 0.03em;
 
   color: #212121;
-
-  margin-top: 40px;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
 }
 
 .field-form {
   position: relative;
 }
 .field-form + .field-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
+  margin-top: 28px;
 }
 
 .modal-form {
@@ -338,20 +336,26 @@ img {
   margin-right: auto;
 }
 .modal-text {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 4px;
+
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
 
   color: var(--paragraph-color);
-  margin-bottom: 4px;
 }
 .modal-icon {
   position: absolute;
-  bottom: 11px;
   left: 12px;
+  bottom: 50%;
+  transform: translateY(50%);
 }
-.form-input:hover + .modal-icon {
+.form-input:hover ~ .modal-icon,
+.form-input:focus ~ .modal-icon {
   fill: var(--hover-color);
 }
 
@@ -369,7 +373,6 @@ img {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 30px;
 
   font-size: 14px;
   line-height: 1.71;
@@ -443,6 +446,7 @@ textarea::placeholder {
 .modal-submit {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
   width: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
